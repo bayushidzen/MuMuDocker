@@ -1,0 +1,6 @@
+F:\Study\Новая папка\MuMuDocker.exe
+F:\Study\Новая папка\MuMuDocker.dll
+F:\Study\Новая папка\MuMuDocker.deps.json
+F:\Study\Новая папка\MuMuDocker.runtimeconfig.json
+F:\Study\Новая папка\MuMuDocker.pdb
+F:\Study\Новая папка\Telegram.Bot.dll

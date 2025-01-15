@@ -1,0 +1,6 @@
+/home/bayushi/Sharper/MuMuDocker/out/MuMuDocker
+/home/bayushi/Sharper/MuMuDocker/out/MuMuDocker.dll
+/home/bayushi/Sharper/MuMuDocker/out/MuMuDocker.deps.json
+/home/bayushi/Sharper/MuMuDocker/out/MuMuDocker.runtimeconfig.json
+/home/bayushi/Sharper/MuMuDocker/out/MuMuDocker.pdb
+/home/bayushi/Sharper/MuMuDocker/out/Telegram.Bot.dll
