@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MuMuDocker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f6721d0d1eebd6421b565be0a323d54b47fd933")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59c71da01db89bde8745133dde254a62b3a943f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("MuMuDocker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MuMuDocker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

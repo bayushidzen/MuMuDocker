@@ -11,12 +11,12 @@ namespace MuMuDocker
         static string hiddenNumber = "1234";
         static int historyMessageID = -1;
         static string historyMessageText = "";
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var tgclient = new TelegramBotClient("8048489833:AAFxefliTFVLg1TZPUoYr5SdreKHQJ8FPLs");
             tgclient.StartReceiving(HandleUpdate, HandleError);
 
-            //Console.ReadKey();
+            await Task.Delay(-1);
         }
 
         private static async Task HandleUpdate(ITelegramBotClient client, Update update, CancellationToken token)
