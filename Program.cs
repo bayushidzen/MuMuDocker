@@ -16,7 +16,7 @@ namespace MuMuDocker
             var tgclient = new TelegramBotClient("8048489833:AAFxefliTFVLg1TZPUoYr5SdreKHQJ8FPLs");
             tgclient.StartReceiving(HandleUpdate, HandleError);
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
 
         private static async Task HandleUpdate(ITelegramBotClient client, Update update, CancellationToken token)
@@ -38,30 +38,30 @@ namespace MuMuDocker
                     await client.SendMessage(chatId, text, replyMarkup: keyboard);
                 }
                 else if (isStartGame)
-			    {
-				if (!IsValid(message))
-				{
-					await client.SendMessage(chatId, "Нельзя вводить число, с повторяющимеся цифрами, " +
-						"нельзя вводить буквы " +
-						"и число должно содержать только 4 цифры!\n\nВведите ваше число:"
-						);
-				}
-				else
-				{
-					(int cowsCount, int bullsCount) = CountingCowsAndBulls(message);
-					await client.SendMessage(chatId, $"Число: {message}\n -Быков: {bullsCount}\n -Коров: {cowsCount}\n\n");
+                {
+                    if (!IsValid(message))
+                    {
+                        await client.SendMessage(chatId, "Нельзя вводить число, с повторяющимеся цифрами, " +
+                            "нельзя вводить буквы " +
+                            "и число должно содержать только 4 цифры!\n\nВведите ваше число:"
+                            );
+                    }
+                    else
+                    {
+                        (int cowsCount, int bullsCount) = CountingCowsAndBulls(message);
+                        await client.SendMessage(chatId, $"Число: {message}\n -Быков: {bullsCount}\n -Коров: {cowsCount}\n\n");
 
-					if (bullsCount == 4)
-					{
-						await client.SendMessage(chatId, "Вы выйграли!");
-                        var keyboard = new InlineKeyboardMarkup([
-                        [InlineKeyboardButton.WithCallbackData("Начать игру сначала?","/startGame")]
-                        ]);
-                        await client.SendMessage(chatId, message, replyMarkup: keyboard);
-					}
+                        if (bullsCount == 4)
+                        {
+                            await client.SendMessage(chatId, "Вы выйграли!");
+                            var keyboard = new InlineKeyboardMarkup([
+                            [InlineKeyboardButton.WithCallbackData("Начать игру сначала?","/startGame")]
+                            ]);
+                            await client.SendMessage(chatId, message, replyMarkup: keyboard);
+                        }
 
-				}
-			}
+                    }
+                }
                 else
                 {
                     await client.DeleteMessage(chatId, update.Message.MessageId);
@@ -160,27 +160,27 @@ namespace MuMuDocker
             return (bullsCount, cowsCount);
         }
         private static bool IsValid(string userNumber)
-	{
-		if (userNumber.Length != 4)
-		{
-			return false;
-		}
+        {
+            if (userNumber.Length != 4)
+            {
+                return false;
+            }
 
-		foreach (char charToCheck in userNumber)
-			if (!char.IsDigit(charToCheck))
-				return false;
+            foreach (char charToCheck in userNumber)
+                if (!char.IsDigit(charToCheck))
+                    return false;
 
-		for (int i = 0; i < userNumber.Length; i++)
-		{
-			for (int j = 0; j < userNumber.Length; j++)
-			{
-				if (userNumber[i] == userNumber[j] && i != j)
-					return false;
-			}
-		}
+            for (int i = 0; i < userNumber.Length; i++)
+            {
+                for (int j = 0; j < userNumber.Length; j++)
+                {
+                    if (userNumber[i] == userNumber[j] && i != j)
+                        return false;
+                }
+            }
 
-		return true;
-	}
+            return true;
+        }
 
 
         private static async Task HandleError(ITelegramBotClient client, Exception exception, HandleErrorSource source, CancellationToken token)
