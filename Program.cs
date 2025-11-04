@@ -13,7 +13,7 @@ namespace MuMuDocker
         static string historyMessageText = "";
         static async Task Main(string[] args)
         {
-            var tgclient = new TelegramBotClient("8048489833:AAFxefliTFVLg1TZPUoYr5SdreKHQJ8FPLs");
+            var tgclient = new TelegramBotClient("Token");
             tgclient.StartReceiving(HandleUpdate, HandleError);
 
             await Task.Delay(-1);
@@ -176,3 +176,4 @@ namespace MuMuDocker
         }
     }
 }
+
