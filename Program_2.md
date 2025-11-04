@@ -10,7 +10,7 @@ static class Program
 
 	static void Main()
 	{
-		var botClient = new TelegramBotClient("6856103261:AAE5muMmIzw7NApuqFOH3geJOfFNscuD0wQ");
+		var botClient = new TelegramBotClient("Token");
 
 		botClient.StartReceiving(HandleUpdate, HandleError);
 		Console.ReadKey();
@@ -171,4 +171,5 @@ static class Program
 	{
 		throw new NotImplementedException();
 	}
+
 }
